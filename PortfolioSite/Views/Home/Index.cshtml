@@ -1,0 +1,442 @@
+﻿@{
+    Layout = null;
+ }
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Douglas Schultz's Portfolio</title>
+  <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
+  <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans">
+  <link href="~/Assets/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="~/Assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="~/Assets/css/imagehover.min.css" rel="stylesheet" />
+  <link href="~/Assets/css/style.css" rel="stylesheet" />
+
+  <!-- =======================================================
+    Theme Name: Mentor
+    Theme URL: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/
+    Author: BootstrapMade.com
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+<body>
+  <!--Navigation bar-->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><span>Douglas Schultz's</span> Web Portfolio</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#feature">Featured Technologies</a></li> <!--For updating-->
+          <li><a href="#project-portfolio">Project Portfolio</a></li>
+          @*<li><a href="#pricing">Pricing</a></li>*@
+          <li><a href="#" data-target="#login" data-toggle="modal">Sign in</a></li>
+          <li class="btn-trial"><a href="#footer">Free Quote</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--/ Navigation bar-->
+  <!--Modal box-->
+  <div class="modal fade" id="login" role="dialog">
+    <div class="modal-dialog modal-sm">
+
+      <!-- Modal content no 1-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-center form-title">Login</h4>
+        </div>
+        <div class="modal-body padtrbl">
+
+          <div class="login-box-body">
+            <p class="login-box-msg">Sign in to start your session</p>
+            <div class="form-group">
+              <form name="" id="loginForm">
+                <div class="form-group has-feedback">
+                  <!----- username -------------->
+                  <input class="form-control" placeholder="Username" id="loginid" type="text" autocomplete="off" />
+                  <span style="display:none;font-weight:bold; position:absolute;color: red;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginid"></span>
+                  <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                  <!----- password -------------->
+                  <input class="form-control" placeholder="Password" id="loginpsw" type="password" autocomplete="off" />
+                  <span style="display:none;font-weight:bold; position:absolute;color: grey;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginpsw"></span>
+                  <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <div class="checkbox icheck">
+                      <label>
+                                <input type="checkbox" id="loginrem" > Remember Me
+                              </label> <!--For updating-->
+                    </div>
+                  </div>
+                  <div class="col-xs-12">
+                    <button type="button" class="btn btn-green btn-block btn-flat" onclick="userlogin()">Sign In</button> <!--For updating-->
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!--/ Modal box-->
+  <!--Banner-->
+  <div class="banner">
+    <div class="bg-color">
+      <div class="container">
+        <div class="row">
+          <div class="banner-text text-center">
+            <div class="text-border">
+              <h2 class="text-dec">Quality & Efficiency</h2>
+            </div>
+            <div class="intro-para text-center quote">
+              <p class="big-text">Learning Today . . . Leading Tomorrow.</p>
+              <p class="small-text">There's never been a better time to upgrade your web presence! <br/>I offer a variety of competitive, custom solutions to bring your clients the best of modern web technology.</p>
+              <a href="#contact" class="btn get-quote">CONTACT</a>
+            </div>
+            <a href="#feature" class="mouse-hover">
+              <div class="mouse"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Banner-->
+  <!--Feature-->
+  <section id="feature" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="header-section text-center">
+          <h2>Featured Technologies</h2>
+          <p>Specializing in modern full-stack technologies with a focus on Microsoft's .NET stack.</p>
+          <hr class="bottom-line">
+        </div>
+        <div class="feature-info">
+          <div class="fea">
+            <div class="col-md-4">
+              <div class="heading pull-right">
+                <h4>Proven Backend </h4>
+                <p>Back-end server programming in C#, a top choice general-purpose programming language enabling adaptive and flexible web applications using a variety of models.</p>
+              </div>
+              <div class="fea-img pull-left">
+                <i class="fa fa-code"></i>
+              </div>
+            </div>
+          </div>
+          <div class="fea">
+            <div class="col-md-4">
+              <div class="heading pull-right">
+                <h4>Mobile-first Mindset</h4>
+                <p>Your application will be supported on more platforms sooner and be more maintainable using Xamarin tools. Simultaneous Andriod and iOS mobile support have never been easier.</p>
+              </div>
+              <div class="fea-img pull-left">
+                <i class="fa fa-drupal"></i>
+              </div>
+            </div>
+          </div>
+          <div class="fea">
+            <div class="col-md-4">
+              <div class="heading pull-right">
+                <h4>Modern Website Design</h4>
+                <p>Get beautiful websites that just work for your business needs. I work with proven web technologies including HTML5, CSS3, jQuery and ASP. Experience user-friendly functionality no matter what browser or device you are using.</p>
+              </div>
+              <div class="fea-img pull-left">
+                <i class="fa fa-trophy"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ feature-->
+  <!--project-portfolio-->
+  <section id="project-portfolio" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="header-section text-center">
+                    <h2>Project Portfolio</h2>
+                    <p>See a sample of professional projects and coursework below.</p>
+                    <hr class="bottom-line">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 padleft-right">
+                    <figure class="imghvr-fold-up">
+                        <img src="~/Assets/img/course01.jpg" class="img-responsive"> <!--to be updated with project specific image-->
+                        <figcaption>
+                            <h3>RateMyAttending.com</h3>
+                            <p>Student project showing how .NET can create a fully functional web application that allows Medical students and residents to review workplaces and physicians, and to network and communicate across the US.</p>
+                        </figcaption>
+                        <a href="#"></a>
+                    </figure>
+                </div>
+                <div class="col-md-4 col-sm-6 padleft-right">
+                    <figure class="imghvr-fold-up">
+                        <img src="~/Assets/img/course02.jpg" class="img-responsive"> <!--to be updated with project specific image-->
+                        <figcaption>
+                            <h3>Custom Built Web Applications</h3>
+                            <p>A few examples of projects I've completed including a bug tracker and a financial planner.</p>
+                        </figcaption>
+                        <a href="#"></a>
+                    </figure>
+                </div>
+                <div class="col-md-4 col-sm-6 padleft-right">
+                    <figure class="imghvr-fold-up">
+                        <img src="~/Assets/img/course05.jpg" class="img-responsive"> <!--to be updated with project specific image-->
+                        <figcaption>
+                            <h3>Bespoke Blog Site</h3>
+                            <p>A custom created blog site created to show how the MVC model in ASP.NET can create an effective website.</p> <!--to be updated with link. -->
+                        </figcaption>
+                        <a href="#"></a>
+                    </figure>
+                </div>
+                <div class="col-md-4 col-sm-6 padleft-right">
+                    <figure class="imghvr-fold-up">
+                        <img src="~/Assets/img/course06.jpg" class="img-responsive"> <!--to be updated with project specific image-->
+                        <figcaption>
+                            <h3>Vanilla JS/jQuery Examples</h3>
+                            <p> These exercises display some basic problem-solving skills and programming acumen.</p>
+                        </figcaption>
+                        <a href='@Url.Action("JSExercise")'></a>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+  <!--/ project-portfolio-->
+    <!--Testimonial-->
+  @*<section id="testimonial" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="header-section text-center">
+          <h2 class="white">See What Our Customer Are Saying?</h2>
+          <p class="white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
+          <hr class="bottom-line bg-white">
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <div class="text-comment">
+            <p class="text-par">"Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, nec sagittis sem"</p>
+            <p class="text-name">Abraham Doe - Creative Dırector</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <div class="text-comment">
+            <p class="text-par">"Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, nec sagittis sem"</p>
+            <p class="text-name">Abraham Doe - Creative Dırector</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>*@
+  <!--/ Testimonial-->
+  <!--Pricing-->
+  @*<section id="pricing" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="header-section text-center">
+          <h2>Our Pricing</h2>
+          <p>We offer competitive custom solutions that meet your budget, with functionality ranging from basic to advanced. </p>
+          <hr class="bottom-line">
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="price-table">
+            <!-- Plan  -->
+            <div class="pricing-head">
+              <h5>Basic MVC Single Page Application Template</h5>
+              <span class="fa fa-usd curency"></span> <span class="amount">800</span>
+            </div>
+
+            <!-- Plean Detail -->
+            <div class="price-in mart-15">
+              <a href="#" class="btn btn-bg green btn-block">GET A QUOTE</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="price-table">
+            <!-- Plan  -->
+            <div class="pricing-head">
+              <h5>Multi-page, Multi-user Web Application</h5>
+              <span class="fa fa-usd curency"></span> <span class="amount">2000</span>
+            </div>
+
+            <!-- Plean Detail -->
+            <div class="price-in mart-15">
+              <a href="#" class="btn btn-bg yellow btn-block">GET A QUOTE</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="price-table">
+            <!-- Plan  -->
+            <div class="pricing-head">
+              <h5>Premium Multi-paradigm Applications <br />incl. Native Cross-Platform Application Support</h5>
+              <span class="fa fa-usd curency"></span> <span class="amount">5000</span>
+            </div>
+
+            <!-- Plean Detail -->
+            <div class="price-in mart-15">
+              <a href="#" class="btn btn-bg red btn-block">GET A QUOTE</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>*@
+  <!--/ Pricing-->
+  <!--Contact-->
+  <section id="contact" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="header-section text-center">
+          <h2>Contact Us</h2>
+          <p>I'm excited to hear from you about your next web application! Please drop me a line below so we can discuss the project scope.</p>
+          <hr class="bottom-line">
+        </div>
+        <div id="sendmessage">Your message has been sent. Thank you!</div>
+        <div id="errormessage"></div>
+        <form action="" method="post" role="form" class="contactForm">
+          <div class="col-md-6 col-sm-6 col-xs-12 left">
+            <div class="form-group">
+              <input type="text" name="name" class="form-control form" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+              <div class="validation"></div>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+              <div class="validation"></div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+              <div class="validation"></div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-6 col-xs-12 right">
+            <div class="form-group">
+              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+              <div class="validation"></div>
+            </div>
+          </div>
+
+          <div class="col-xs-12">
+            <!-- Button -->
+            <button type="submit" id="submit" name="submit" class="form contact-form-button light-form-button oswald light">SEND EMAIL</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+  <!--/ Contact-->
+    <!--work-shop-->
+    <section id="work-shop" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="header-section text-center">
+                    <h2>Technologies to be Supported in the Future</h2>
+                    <p>Even though I love C# and ASP.NET, I'm always looking to further improve my skills and explore new technologies. Here is what I'm working on next!</p>
+                    <hr class="bottom-line">
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="service-box text-center">
+                        <div class="icon-box">
+                            <i class="fa fa-html5 color-green"></i>
+                        </div>
+                        <div class="icon-text">
+                            <h4 class="ser-text">React</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="service-box text-center">
+                        <div class="icon-box">
+                            <i class="fa fa-css3 color-green"></i>
+                        </div>
+                        <div class="icon-text">
+                            <h4 class="ser-text">C++</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/ work-shop-->
+  <!--Footer-->
+  <footer id="footer" class="footer">
+    <div class="container text-center">
+
+      <h3>Reach out for a free quote today!</h3>
+
+      <form class="mc-trial row">
+        <div class="form-group col-md-3 col-md-offset-2 col-sm-4">
+          <div class=" controls">
+            <input name="name" placeholder="Enter Your Name" class="form-control" type="text">
+          </div>
+        </div>
+        <!-- End email input -->
+        <div class="form-group col-md-3 col-sm-4">
+          <div class=" controls">
+            <input name="EMAIL" placeholder="Enter Your email" class="form-control" type="email">
+          </div>
+        </div>
+        <!-- End email input -->
+        <div class="col-md-2 col-sm-4">
+          <p>
+            <button name="submit" type="submit" class="btn btn-block btn-submit">
+            Submit <i class="fa fa-arrow-right"></i></button>
+          </p>
+        </div>
+      </form>
+      <!-- End newsletter-form -->
+      <ul class="social-links">
+        <li><a href="#link"><i class="fa fa-twitter fa-fw"></i></a></li>
+        <li><a href="#link"><i class="fa fa-facebook fa-fw"></i></a></li>
+        <li><a href="#link"><i class="fa fa-google-plus fa-fw"></i></a></li>
+        <li><a href="#link"><i class="fa fa-dribbble fa-fw"></i></a></li>
+        <li><a href="#link"><i class="fa fa-linkedin fa-fw"></i></a></li>
+      </ul>
+      ©2016 Mentor Theme. All rights reserved
+      <div class="credits">
+        <!--
+          All the links in the footer should remain intact.
+          You can delete the links only if you purchased the pro version.
+          Licensing information: https://bootstrapmade.com/license/
+          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Mentor
+        -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade.com</a>
+      </div>
+    </div>
+  </footer>
+  <!--/ Footer-->
+
+  <script src="~/Assets/js/jquery.min.js"></script>
+  <script src="~/Assets/js/jquery.easing.min.js"></script>
+  <script src="~/Assets/js/bootstrap.min.js"></script>
+  <script src="~/Assets/js/custom.js"></script>
+  <script src="~/Assets/contactform/contactform.js"></script>
+
+</body>
+
+</html>

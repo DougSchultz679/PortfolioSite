@@ -1,0 +1,688 @@
+﻿@{
+    ViewBag.Title = "JSExercise";
+}
+
+<h2>JSExercise</h2>
+
+<div class="container">
+    <div class="row well">
+        <h4>Highly Constrained Calculator</h4>
+        <div class="col-lg-3 well">
+            <input id="firstVal" type="number" /> <p>+</p> <input id="secondVal" type="number" /> <br />
+            <p>= <label id="result"></label></p>
+            <button id="sumCalculator">Calculate</button>
+        </div>
+        <div class="col-lg-9 well">
+            <p>(<input id="firstVal2" type="number" /> + <input id="secondVal2" type="number" />) / <input id="thirdVal2" type="number" /></p>
+            <p>= <label id="result2"></label></p>
+            <button id="secondCalculator">Calculate</button>
+        </div>
+    </div>
+    <div class="row well">
+        <h4>Display all the integers between 2 integers... for some reason</h4>
+        <div class="col-lg-12 well">
+            <input type="number" id="starting" placeholder="Enter starting number..." /><br />
+            <input type="number" id="ending" placeholder="Enter ending number..." /><br />
+            <button id="iterator">Display</button>
+            <p><label id="result3"></label></p>
+        </div>
+    </div>
+    <h1>Week 6 JS Exercises</h1>
+    <div class="row well">
+        <h4>Five Number Evaluator</h4>
+        <div class="col-lg-12 well">
+            <h5>Please enter 5 numbers and evaluate to get some information on this set.</h5>
+            <input type="number" id="firstVal3" placeholder="First number..." />
+            <input type="number" id="secondVal3" placeholder="second number..." />
+            <input type="number" id="thirdVal3" placeholder="third number..." />
+            <input type="number" id="fourthVal3" placeholder="fourth number..." />
+            <input type="number" id="fifthVal3" placeholder="fifth number..." /><br />
+            <button id="fiveNumberEvaluator">Evaluate five numbers</button><br />
+            <h5>Results:</h5>
+            <p>The smallest number in this set is: <label id="5numberMin"></label></p>
+            <p>The largest number in this set is: <label id="5numberMax"></label></p>
+            <p>The mean of this number set is: <label id="5numberMean"></label></p>
+            <p>The sum of this number set is: <label id="5numberSum"></label></p>
+            <p>The product of this number this set is: <label id="5numberProduct"></label></p>
+        </div>
+    </div>
+    <div class="row well">
+        <h4>Factorializer</h4>
+        <div class="col-lg-12 well">
+            <h4>Enter an integer to evaluate it's factorial.</h4>
+            <input type="number" id="factorialand" placeholder="Enter a number..." />
+            <button id="factorialize">Factorialize</button><br />
+            <h5>Result:</h5>
+            <p><label id="factorialResult"></label></p>
+        </div>
+    </div>
+    <div class="row well">
+        <h4>General FizzBuzzer</h4>
+        <div class="col-lg-12 well">
+            <h4>Enter 2 numbers to fizz on multiples of the first and buzz on multiples of the second from 0 to 100.</h4>
+            <input type="number" id="starting2" placeholder="Enter starting number..." /><br /><br />
+            <input type="number" id="ending2" placeholder="Enter ending number..." /><br />
+            <button id="generalFizzBuzz">Display</button><br />
+            <p>Result: <label id="result5"></label></p>
+        </div>
+    </div>
+    <div class="row well">
+        <h4>Palindrome Detector</h4>
+        <div class="col-lg-12 well">
+            <h4>Enter a word to determine whether it is a palindrome.</h4>
+            <input type="text" id="sourceWord" placeholder="Enter your word here..." />
+            <button id="palindromeChecker">Check for palindromes</button><br />
+            <p>Result: <label id="result6"></label></p>
+        </div>
+    </div>
+    <h1>Advanced JS Exercises</h1>
+    <div class="row well">
+        <h4>String component finder</h4>
+        <div class="col-lg-12 well">
+            <h4>Enter a word to receive all combinations of letters of that word.</h4>
+            <input type="text" id="sourceWord2" placeholder="Enter your word here..." />
+            <button id="stringFactorializerButton">Produce word component combos</button><br />
+            <p>Result: <label id="result7"></label></p>
+        </div>
+    </div>
+    <div class="row well">
+        <h4>String alphabetizer</h4>
+        <div class="col-lg-12 well">
+            <h4>Enter a string to get it alphabetized.</h4>
+            <input type="text" id="sourceWord3" placeholder="Enter your word here..." />
+            <button id="stringAlphabetizerButton">Alphabetize strings</button><br />
+            <p>Result: <label id="result8"></label></p>
+        </div>
+    </div>
+    <div class="row well">
+        <h4>Word capitalizer</h4>
+        <div class="col-lg-12 well">
+            <h4>Enter a series of words to capitalize the first letter of each word.</h4>
+            <input type="text" id="sourceSentence" placeholder="Enter your sentence here..." maxlength="140" style="width:450px" />
+            <button id="sentenceComponentCapitalizer">Capitalize words</button><br />
+            <p>Result: <label id="result9"></label></p>
+        </div>
+    </div>
+    <div class="row well">
+        <h4>String content assessor</h4>
+        <div class="col-lg-12 well">
+            <h4>Enter a string of characters to find the first non-repeated character.</h4>
+            <input type="text" id="sourceString" placeholder="Enter your string here..." maxlength="140" />
+            <button id="stringContentAssessor">Assess string content</button><br />
+            <p>Result: <label id="result10"></label></p>
+            <p>All unique characters: <label id="result10-2"></label></p>
+        </div>
+    </div>
+    <div class="row well">
+        <h4>Random string generator</h4>
+        <div class="col-lg-12 well">
+            <h4>Enter the desired length of your randomly generated string.</h4>
+            <input type="number" id="targetLength" placeholder="Enter the desired length here..." style="width:450px" />
+            <button id="randomStringCreator">Get random string</button><br />
+            <p>Result: <label id="result11"></label></p>
+        </div>
+    </div>
+
+    <div class="row well">
+        <div class="row well">
+            <h4>Less Constrained jQuery Calculator</h4>
+            <div class="col-lg-2">
+            </div>
+            <div class="col-lg-8 well">
+                <h4><strong>Display:</strong></h4><br />
+                <table class="table table-bordered">
+                    <tr>
+                        <th>
+                            <p id="calculatorDisplay">0</p>
+                        </th>
+                    </tr>
+                </table>
+                <table class="table table-bordered">
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button id="squareRoot" class="btn-block" style="border-color:#00e600">&radic;</button>
+                        </td>
+                        <td>
+                            <button id="squareOf" class="btn-block" style="border-color:#00e600"><i>x<sup>2</sup></i></button>
+                        </td>
+                        <td>
+                            <button id="oneOverVal" class="btn-block" style="border-color:#00e600"><sup>1</sup>/<i>x</i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button id="clear" class="btn-block" style="border-color:greenyellow">C</button>
+                        </td>
+                        <td>
+                            <button id="backspace" class="btn-block" style="border-color:#00e600">&larr;</button>
+                        </td>
+                        <td>
+                            <button id="divideBy" class="btn-block" style="border-color:#ff4d4d">/</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button id="seven" class="btn-block" style="border-color:blue">7</button>
+
+                        </td>
+                        <td>
+                            <button id="eight" class="btn-block" style="border-color:blue">8</button>
+
+                        </td>
+                        <td>
+                            <button id="nine" class="btn-block" style="border-color:blue">9</button>
+
+                        </td>
+                        <td>
+                            <button id="multiplyBy" class="btn-block" style="border-color:#ff4d4d">X</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button id="four" class="btn-block" style="border-color:blue">4</button>
+
+                        </td>
+                        <td>
+                            <button id="five" class="btn-block" style="border-color:blue">5</button>
+
+                        </td>
+                        <td>
+                            <button id="six" class="btn-block" style="border-color:blue">6</button>
+
+                        </td>
+                        <td>
+                            <button id="subtractBy" class="btn-block" style="border-color:#ff4d4d">-</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button id="one" class="btn-block" style="border-color:blue">1</button>
+
+                        </td>
+                        <td>
+                            <button id="two" class="btn-block" style="border-color:blue">2</button>
+
+                        </td>
+                        <td>
+                            <button id="three" class="btn-block" style="border-color:blue">3</button>
+
+                        </td>
+                        <td>
+                            <button id="addTo" class="btn-block" style="border-color:#ff4d4d">+</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button id="flipSign" class="btn-block" style="border-color:#00e600">&plusmn;</button>
+
+                        </td>
+                        <td>
+                            <button id="zero" class="btn-block" style="border-color:blue">0</button>
+
+                        </td>
+                        <td>
+                            <button id="deci" class="btn-block" style="border-color:blue">.</button>
+
+                        </td>
+                        <td>
+                            <button id="equals" class="btn-block" style="border-color:orangered">=</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-lg-2">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+    $(document).ready(() => {
+
+        //Calculator code
+        let workingVal = '0';
+        let lastVal = 0, resultVal = 0;
+        let chainArith = false;
+        let equalsFunc = function () { };
+
+        function updateDisplay(txt) {
+            $('#calculatorDisplay').text(txt);
+        }
+
+        function clearDisplay() {
+            workingVal = '0';
+            $('#calculatorDisplay').text('0');
+        }
+
+        function addDoer(a, b) {
+            return a + b;
+        }
+
+        function subtractDoer(a, b) {
+            return a - b;
+        }
+
+        function multiplicationDoer(a, b) {
+            return a * b;
+        }
+
+        function divisionDoer(a, b) {
+            return a / b;
+        }
+
+        $('#clear').click(() => {
+            lastVal = 0;
+            clearDisplay();
+        });
+
+        $('#backspace').click(() => {
+            let wArray = workingVal.split('');
+            wArray = wArray.slice(0, wArray.length - 1);
+            if (wArray.length > 0) {
+                workingVal = wArray.join('');
+            }
+            else workingVal = '0';
+            updateDisplay(workingVal);
+        });
+
+        $('#flipSign').click(() => {
+            let wNumber = parseFloat(workingVal);
+            wNumber = -1 * wNumber;
+            workingVal = wNumber.toString();
+            updateDisplay(workingVal);
+        });
+
+        $('#squareRoot').click(() => {
+            let wNumber = parseFloat(workingVal);
+            wNumber = Math.sqrt(wNumber);
+            workingVal = wNumber.toString();
+            updateDisplay(workingVal);
+        });
+
+        $('#squareOf').click(() => {
+            let wNumber = parseFloat(workingVal);
+            wNumber = wNumber * wNumber;
+            workingVal = wNumber.toString();
+            updateDisplay(workingVal);
+        });
+
+        $('#oneOverVal').click(() => {
+            let wNumber = parseFloat(workingVal);
+            wNumber = 1 / wNumber;
+            workingVal = wNumber.toString();
+            updateDisplay(workingVal);
+        });
+
+        $('#divideBy').click(() => {
+            if (chainArith == false) {
+                lastVal = parseFloat(workingVal);
+                equalsFunc = divisionDoer;
+                clearDisplay();
+                chainArith = true;
+            }
+            else lastVal = equalsFunc(lastVal, parseInt(workingVal));
+            equalsFunc = divisionDoer;
+            clearDisplay();
+        });
+
+        $('#multiplyBy').click(() => {
+            if (chainArith == false) {
+                lastVal = parseFloat(workingVal);
+                equalsFunc = multiplicationDoer;
+                clearDisplay();
+                chainArith = true;
+            }
+            else lastVal = equalsFunc(lastVal, parseInt(workingVal));
+            equalsFunc = multiplicationDoer;
+            clearDisplay();
+        });
+
+        $('#subtractBy').click(() => {
+            if (chainArith == false) {
+                lastVal = parseFloat(workingVal);
+                equalsFunc = subtractDoer;
+                clearDisplay();
+                chainArith = true;
+            }
+            else lastVal = equalsFunc(lastVal, parseInt(workingVal));
+            equalsFunc = multiplicationDoer;
+            clearDisplay();
+        });
+
+        $('#addTo').click(() => {
+            if (chainArith == false) {
+                lastVal = parseFloat(workingVal);
+                equalsFunc = addDoer;
+                clearDisplay();
+                chainArith = true;
+            }
+            else lastVal = equalsFunc(lastVal, parseInt(workingVal));
+            equalsFunc = addDoer;
+            clearDisplay();
+
+        });
+
+        $('#equals').click(() => {
+            resultVal = equalsFunc(lastVal, parseInt(workingVal));
+            lastVal = resultVal;
+            workingVal = resultVal;
+            updateDisplay(resultVal.toString());
+            chainArith = false;
+        });
+
+        $('#one').click(() => {
+            workingVal += '1';
+            updateDisplay(workingVal);
+        });
+
+        $('#two').click(() => {
+            workingVal += '2';
+            updateDisplay(workingVal);
+        });
+
+        $('#three').click(() => {
+            workingVal += '3';
+            updateDisplay(workingVal);
+        });
+
+        $('#four').click(() => {
+            workingVal += '4';
+            updateDisplay(workingVal);
+        });
+
+        $('#five').click(() => {
+            workingVal += '5';
+            updateDisplay(workingVal);
+        });
+
+        $('#six').click(() => {
+            workingVal += '6';
+            updateDisplay(workingVal);
+        });
+
+        $('#seven').click(() => {
+            workingVal += '7';
+            updateDisplay(workingVal);
+        });
+
+        $('#eight').click(() => {
+            workingVal += '8';
+            updateDisplay(workingVal);
+        });
+
+        $('#nine').click(() => {
+            workingVal += '9';
+            updateDisplay(workingVal);
+        });
+
+        $('#zero').click(() => {
+            workingVal += '0';
+            updateDisplay(workingVal);
+        });
+
+        $('#deci').click(() => {
+            workingVal += '.';
+            updateDisplay(workingVal);
+        });
+
+        //JS Exercise
+
+        $('#sumCalculator').on('click', () => {
+            const $firstInput = Number($("#firstVal").val());
+            const $secondInput = Number($("#secondVal").val());
+            let result = $firstInput + $secondInput;
+            $("#result").text(" " + result);
+
+        });
+
+        $('#secondCalculator').on('click', () => {
+            let $firstInput = Number($("#firstVal2").val());
+            let $secondInput = Number($("#secondVal2").val());
+            let $thirdInput = Number($("#thirdVal2").val());
+            let result = ($firstInput + $secondInput) / $thirdInput;
+            $("#result2").text(" " + result);
+        });
+
+        $('#iterator').on('click', () => {
+            var $value1 = Number($("#starting").val());
+            var $value2 = Number($("#ending").val());
+            let result = "";
+            if ($value1 < $value2) {
+                for (i = $value1; i <= $value2; i++) {
+                    if (i !== $value2) {
+                        result += i + ", ";
+                    }
+                    else result += i + ".";
+                }
+            }
+            else if ($value2 < $value1) {
+                for (i = $value1; i >= $value2; i--) {
+                    if (i !== $value2) {
+                        result += i + ", ";
+                    }
+                    else result += i + ".";
+                }
+            }
+            $("#result3").text(result);
+        });
+
+        $('#fiveNumberEvaluator').on('click', () => {
+            const a = Number($('#firstVal3').val());
+            const b = Number($('#secondVal3').val());
+            const c = Number($('#thirdVal3').val());
+            const d = Number($('#fourthVal3').val());
+            const e = Number($('#fifthVal3').val());
+            const evaluand = [a, b, c, d, e];
+            let sumResult = a + b + c + d + e;
+            let productResult = a * b * c * d * e;
+            let meanResult = (a + b + c + d + e) / 5;
+
+            function minFinder(evaluand) {
+                var min = evaluand[0];
+                for (i = 1; i <= evaluand.length; i++) {
+                    if (min > evaluand[i]) {
+                        min = evaluand[i];
+                    }
+                }
+                return min;
+            }
+
+            function maxFinder(evaluand) {
+                let max = evaluand[0];
+                for (i = 1; i <= evaluand.length; i++) {
+                    if (max < evaluand[i]) {
+                        max = evaluand[i];
+                    }
+                }
+                return max;
+            }
+
+            $('#5numberMean').text(meanResult);
+            $('#5numberSum').text(sumResult);
+            $('#5numberProduct').text(productResult);
+            $('#5numberMin').text(minFinder(evaluand));
+            $('#5numberMax').text(maxFinder(evaluand));
+        });
+
+        $('#factorialize').on('click', () => {
+            let n = Number($("#factorialand").val());
+
+            $('#factorialResult').text(factorial(n));
+
+            function factorial(x) {
+                let result = 1;
+                if (x === 0) {
+                    return 1;
+                }
+                return result = x * factorial(x - 1);
+            }
+        });
+
+        $('#generalFizzBuzz').on('click', () => {
+            const $firstNum = Number($("#starting2").val());
+            const $secondNum = Number($("#ending2").val());
+            let $retString = $("#result5");
+
+            if (($firstNum > 100 || $firstNum < 0) || ($secondNum > 100 || $secondNum < 0)) {
+                retString.textContent = "Please enter values between 0 and 100 for both numbers.";
+            }
+            else $retString.text(fizzBuzz($firstNum, $secondNum));
+
+            function fizzBuzz(a, b) {
+                let resultString = "";
+                for (i = 1; i <= 100; i++) {
+                    if (i < 100) {
+                        (i % a === 0 && i % b === 0) ? resultString += "FizzBuzz, " : ((i % a === 0) ? resultString += "Fizz, " : ((i % b === 0) ? resultString += "Buzz, " : resultString += i + ", "));
+                    }
+                    else (i % a === 0 && i % b === 0) ? resultString += "FizzBuzz." : ((i % a === 0) ? resultString += "Fizz." : ((i % b === 0) ? resultString += "Buzz." : resultString += i + "."));
+                }
+                return resultString;
+            }
+        });
+
+        $('#palindromeChecker').click(() => {
+            const $srcWord = $("#sourceWord").val().toLowerCase();
+            let intermediateArray = [];
+            let flipSrc = "";
+
+            for (i = $srcWord.length - 1; i >= 0; i--) {
+                intermediateArray.push($srcWord.charAt(i));
+            }
+
+            flipSrc = intermediateArray.join('');
+
+            if ($srcWord == flipSrc) {
+                $('#result6').text("Yup, its a palindrome.");
+            }
+
+            else {
+                $('#result6').text("Sorry, no palindromes here.");
+            }
+        });
+
+        $('#stringFactorializerButton').click(() => {
+            const $srcWord = $('#sourceWord2').val().toLowerCase();
+            let intermediateArray = [], resultArray = [];
+
+            for (i = 0; i < $srcWord.length; i++) {
+                for (j = i; j < $srcWord.length; j++) {
+                    for (k = i; k <= j; k++) {
+                        intermediateArray.push($srcWord.charAt(k));
+                    }
+                    resultArray.push(intermediateArray.join(''));
+                    intermediateArray = [];
+                }
+            }
+            $('#result7').text(resultArray.join(', '));
+        });
+
+        $('#stringAlphabetizerButton').on('click', () => {
+            const $srcWord = $('#sourceWord3').val().toLowerCase();
+            let intermediateArray = [];
+
+            for (i = 0; i < $srcWord.length; i++) {
+                intermediateArray.push($srcWord.charAt(i));
+            }
+
+            $('#result8').text(selectionSort(intermediateArray).join(''));
+
+            function selectionSort(arr) {
+                let tmp = [], smallest = 0;
+                for (i = 0; i < arr.length; i++) {
+                    smallest = i;
+                    for (j = i + 1; j < arr.length; j++) {
+                        if (arr[j] < arr[smallest]) {
+                            smallest = j;
+                        }
+                    }
+                    tmp = arr[i];
+                    arr[i] = arr[smallest];
+                    arr[smallest] = tmp;
+                }
+                return arr;
+            }
+        });
+
+        $('#sentenceComponentCapitalizer').on('click', () => {
+            const $srcSentence = $('#sourceSentence').val().toLowerCase();
+            let upperArray = [], lowerArray = [], finalArray = [];
+            let resultString = '';
+            upperArray = $srcSentence.split(' ');
+
+            for (i = 0; i < upperArray.length; i++) {
+                lowerArray = upperArray[i].split('');
+                for (j = 0; j < 1; j++) {
+                    lowerArray[j] = lowerArray[j].toUpperCase();
+                    finalArray.push(lowerArray.join(''));
+                    lowerArray = [];
+                }
+            }
+            resultString = finalArray.join(' ');
+            $('#result9').text(resultString);
+        });
+
+        $('#stringContentAssessor').on('click', () => {
+            const $srcString = $('#sourceString').val().toLowerCase();
+            let wArray = $srcString.split('');
+
+            while (charMatchAssessor(wArray) == true) {
+                wArray = filterMatchingChars(wArray);
+            }
+
+
+            if (wArray.length !==){
+                $('#result10').text(wArray[0]);
+                $('#result10-2').text(wArray.join(', '));
+            }
+            $('#result10').text("There are no unique characters in the string!");
+
+            function charMatchAssessor(arr) {
+                for (i = 0; i < arr.length; i++) {
+                    for (k = i + 1; k < arr.length; k++) {
+                        if (arr[i] == arr[k]) {
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            function filterMatchingChars(arr) {
+                for (i = 0; i < arr.length; i++) {
+                    for (k = i + 1; k < arr.length; k++) {
+                        if (arr[i] == arr[k]) {
+                            return arr = arr.filter(char => char != arr[i]);
+                        }
+                    }
+                }
+            }
+
+            //function arrayElementComparer(arr, x) {
+            //    for (i = 0; i < arr.length; i++) {
+            //        for (k = i + 1; k < arr.length; k++) {
+            //            if (arr[i] == arr[k]) {
+            //                return x;
+            //            }
+            //        }
+            //    }
+            //}
+        });
+
+        $('#randomStringCreator').on('click', () => {
+            const $targetLength = $('#targetLength').val();
+            const loadString = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let clipArray = [], resultArray = [];
+            for (i = 0; i < loadString.length; i++) {
+                clipArray.push(loadString.charAt(i));
+            }
+
+            for (i = 0; i < $targetLength; i++) {
+                resultArray.push(clipArray[Math.floor(Math.random() * (clipArray.length))]);
+            }
+
+            $('#result11').text(resultArray.join(''));
+        });
+    });
+</script>

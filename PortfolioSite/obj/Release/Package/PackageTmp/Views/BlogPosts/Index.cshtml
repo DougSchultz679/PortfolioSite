@@ -1,0 +1,71 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<PortfolioSite.Models.BlogPost>
+
+@{
+    ViewBag.Title = "Blog Posts";
+}
+
+@if (User.IsInRole("Admin"))
+{
+    <br />
+    <p>
+        <button class="btn btn-green">@Html.ActionLink("Create New", "Create")</button>
+
+    </p>
+}
+
+<section class="latest-posts">
+    <div class="container">
+        <header>
+            <h2>Latest from the blog</h2>
+            <p class="text-big">Here are some blog posts.</p>
+        </header>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="post col-md-4">
+                    <div class="post-thumbnail">
+                        @if (item.MediaUrl != null)
+                        {
+                            <img class="img-responsive" src="@item.MediaUrl" alt="">
+                        }
+                    </div>
+                    <div class="post-details">
+                        <div class="post-meta d-flex justify-content-between">
+                            <div class="date">
+                                Published: @if (item.Updated > item.Created)
+                                {
+                                    @item.Updated.Value.ToString("MMM dd, yyyy")
+                                } else
+                                {
+                                    @item.Created.ToString("MMM dd, yyyy")
+                                }
+                            </div>
+                            <div class="category">@Html.ActionLink("View Post", "Details", new { slug = item.Slug })</div>
+                        </div>
+                        <h3 class="h4">@Html.DisplayFor(modelItem => item.Title)</h3>
+                        <p class="text-muted">@Html.Raw(item.Body)</p>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <p><button class="btn btn-green">@Html.ActionLink("Edit", "Edit", new { slug = item.Slug })</button> | <button class="btn btn-green">@Html.ActionLink("Delete", "Delete", new { slug = item.Slug })</button></p>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+        <p class="text-big align-content-md-center">
+            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page, searchStr = ViewBag.Search }), PagedListRenderOptions.TwitterBootstrapPager)
+        </p>
+    </div>
+</section>
+
+<!-- Javascript files-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+<script src="~/Assets/BlogTemplate/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="~/Assets/BlogTemplate/vendor/jquery.cookie/jquery.cookie.js"></script>
+<script src="~/Assets/BlogTemplate/vendor/&#64;fancyapps/fancybox/jquery.fancybox.min.js"></script>
+<script src="~/Assets/BlogTemplate/js/front.js"></script>
+

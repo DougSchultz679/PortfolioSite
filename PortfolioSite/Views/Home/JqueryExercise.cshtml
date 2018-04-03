@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "JqueryExercise";
+}
+
+<h2 id="text">JqueryExercise</h2>
+
+
+<button id="mybtn" onclick="myHideFunc()">JavaScript Hide</button><br /><br/>
+<button id="mybtn2">jQuery Hide</button><br /><br />
+<button id="mybtn3">Change title color</button><br /><br />
+<button id="mybtn4">Change font size</button><br /><br />
+<button id="mybtn5">Set alignment right</button><br /><br />
+<button id="mybtn6">Do lots of things</button><br/><br/>
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script>
+    $(document).ready(() => {
+
+
+        function myHideFunc() {
+            document.getElementById('text').style.display = "none";
+        }
+
+        $('#mybtn2').click(
+            function myjqueryhideFunc() {
+                $("#text").toggle();
+            }
+        )
+        $('#mybtn3').click(
+            function myjquerycolorFunc() {
+                $("#text").css("color", 'red');
+            }
+        )
+        $('#mybtn4').click(
+            function myjqueryFontSizeFunc() {
+                $('#text').css('font-size', '5px');
+            })
+
+        $('#mybtn5').click(
+            function myjqueryAlignmentFunc() {
+                $('#text').css('text-align', 'right');
+            })
+
+        $('#mybtn6').click(
+            function myjqueryLotsOfThings() {
+                $('#text').css({ 'text-align': 'center', 'color': 'blue', 'font-size': '100px' });
+            })
+
+
+
+
+    }
+</script>

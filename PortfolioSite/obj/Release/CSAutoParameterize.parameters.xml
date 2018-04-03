@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=tcp:dws-app-server.database.windows.net,1433;&#xD;&#xA;         Initial Catalog=PortfolioSite;&#xD;&#xA;         User Id=dwsbugtrackerproject;&#xD;&#xA;         Password=42Astr8Flu5h1;&#xD;&#xA;         Persist Security Info=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Douglas\ Schultz\\Desktop\\L2Code\\CoreTechs\ Projs\\PortfolioSite\\PortfolioSite\\PortfolioSite\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>

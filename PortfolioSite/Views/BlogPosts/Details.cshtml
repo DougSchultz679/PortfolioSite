@@ -1,0 +1,193 @@
+﻿@model PortfolioSite.Models.BlogPost
+@using PortfolioSite.Models;
+
+@{
+    ViewBag.Title = "Blog Post Details";
+}
+<div class="container">
+    <div class="row">
+        <!-- Latest Posts -->
+        <main class="post blog-post col-lg-8">
+            <div class="container">
+                <div class="post-single">
+                    <div class="post-thumbnail">
+                        @if (Model.MediaUrl != null)
+                        {
+                            <img class="img-responsive" src="@Model.MediaUrl">
+                        }
+                    </div>
+                    <div class="post-details">
+                        <h1>@Html.DisplayFor(model => model.Title)</h1>
+                        <div class="post-footer d-flex align-items-center flex-column flex-sm-row">
+                            <div class="avatar"><img src="~/Uploads/SRV-Avatar.jpg" alt="..." class="img-fluid"></div>
+                            <div class="title"><span>Douglas Schultz</span></div>
+                            <div class="d-flex align-items-center flex-wrap">
+                                <!--This should display created or updated depending on which is more recent.-->
+                                <div class="date">
+                                    <i class="icon-clock"></i> Published:
+                                    @if (Model.Updated > Model.Created)
+                                    {
+                                        @Model.Updated.Value.ToString("MMM dd, yyyy")
+                                    } else
+                                    {
+                                        @Model.Created.ToString("MMM dd, yyyy")
+                                    }
+                                </div>
+                                <div class="comments meta-last"><i class="icon-comment"></i> @Model.Comments.Count()</div>
+                            </div>
+                        </div>
+                        <div class="post-body">
+                            @Html.Raw(Model.Body)
+                        </div>
+                        <div class="posts-nav d-flex justify-content-between align-items-stretch flex-column flex-md-row">
+
+
+                            <!-- Next/previous buttons-->
+                            @*<a href="#" class="prev-post text-left d-flex align-items-center">
+                                    <div class="icon prev"><i class="fa fa-angle-left"></i></div>
+                                    <div class="text">
+                                        <strong class="text-primary">Previous Post </strong>
+                                        <h6>I Bought a Wedding Dress.</h6>
+                                    </div>
+                                </a><a href="#" class="next-post text-right d-flex align-items-center justify-content-end">
+                                    <div class="text">
+                                        <strong class="text-primary">Next Post </strong>
+                                        <h6>I Bought a Wedding Dress.</h6>
+                                    </div>
+                                    <div class="icon next"><i class="fa fa-angle-right">   </i></div>
+                                </a>*@
+                        </div>
+
+
+                        <div class="post-comments">
+                            <header>
+                                <!--fix no-of comments here-->
+                                <h3 class="h6">Comments: <span class="no-of-comments">@Model.Comments.Count()</span></h3>
+                            </header>
+
+                            @foreach (var item in Model.Comments)
+                            {
+                                <div class="comment">
+                                    <div class="comment-header d-flex justify-content-between">
+                                        <div class="user d-flex align-items-center">
+                                            <!-- fix image here-->
+                                            <div class="image"><img src="~/Uploads/lightbulb.png" alt="..." class="img-fluid rounded-circle"></div>
+                                            <div class="title">
+                                                <strong>@Html.DisplayFor(m => item.Author.DisplayName)</strong>
+                                                <span class="date">@item.Created.ToString("MMM dd, yyyy")</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="comment-body">
+                                        <p>@Html.DisplayFor(m => item.Body)</p>
+                                        @if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
+                                        {
+                                            <div>
+                                                <p>
+                                                    <button class="btn btn-green">@Html.ActionLink("Edit", "Edit", "Comments", new { id = item.Id }, null)</button>
+                                                    <button class="btn btn-green">@Html.ActionLink("Delete", "Delete", "Comments", new { id = item.Id }, null)</button>
+                                                </p>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            }
+                            <p> At this time only Administrator and Moderator users are permitted to leave comments.</p>
+                        </div>
+                        <div class="add-comment">
+                            <hr />
+                            @{
+                                if (!User.Identity.IsAuthenticated)
+                                {
+                                    @Html.ActionLink("Please log in to leave comments.", "Login", "Account");
+                                }
+                                if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
+
+                                {
+                                    using (Html.BeginForm("Create", "Comments", FormMethod.Post))
+                                    {
+                                        @Html.AntiForgeryToken();
+                                        @Html.HiddenFor(m => m.Id)
+                                        <input type="hidden" name="PostId" value="@Model.Id" />
+
+                                        <div class="form-group">
+                                            <label for="comment-new__textarea" class="sr-only">Enter your comment here:</label>
+                                            @if (User.Identity.IsAuthenticated)
+                                            {
+                                                <textarea class="form-control" rows="2" id="body" name="body" placeholder="Enter your comment here..."></textarea>
+                                            }
+                                        </div>
+                                        if (User.Identity.IsAuthenticated)
+                                        {
+                                            <button type="submit" value="Create" class="btn btn-green">Send Comment</button>
+                                        }
+                                    }
+                                }
+                            }
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+        <aside class="col-lg-4">
+            <!-- Widget[Search Bar Widget]-->
+            @*<div class="widget search">
+                    <header>
+                        <h3 class="h6">Search the blog</h3>
+                    </header>
+                    <form action="#" class="search-form">
+                        <div class="form-group">
+                            <input type="search" placeholder="What are you looking for?">
+                            <button type="submit" class="submit"><i class="icon-search"></i></button>
+                        </div>
+                    </form>
+                </div>*@
+            <!-- Widget[Latest Posts Widget]        -->
+            @*<div class="widget latest-posts">
+                    <header>
+                        <h3 class="h6">Latest Posts</h3>
+                    </header>
+                    <div class="blog-posts">
+                        <a href="#">
+                            < div class="item d-flex align-items-center">
+                            <div class="image"><img src="img/small-thumbnail-1.jpg" alt="..." class="img-fluid"></div>
+                            <div class="title">
+                                <strong>Alberto Savoia Can Teach You About</strong>
+                                <div class="d-flex align-items-center">
+                                    <div class="views"><i class="icon-eye"></i> 500</div>
+                                    <div class="comments"><i class="icon-comment"></i>12</div>
+                                </div>
+                            </div>
+                    </div>
+                    </a><a href="#">
+                        < div class="item d-flex align-items-center">
+                        <div class="image"><img src="img/small-thumbnail-2.jpg" alt="..." class="img-fluid"></div>
+                        <div class="title">
+                            <strong>Alberto Savoia Can Teach You About</strong>
+                            <div class="d-flex align-items-center">
+                                <div class="views"><i class="icon-eye"></i> 500</div>
+                                <div class="comments"><i class="icon-comment"></i>12</div>
+                            </div>
+                        </div>
+                </div>*@
+        </aside>
+    </div>
+</div>
+
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        <button class="btn btn-green">@Html.ActionLink("Edit Blog Post", "Edit", new { slug = Model.Slug })</button>
+        <button class="btn btn-green">@Html.ActionLink("Delete Blog Post", "Delete", new { slug = Model.Slug })</button>
+        <button class="btn btn-green">@Html.ActionLink("Back to List", "Index")</button>
+    </p>
+} else
+{<p>
+        <button class="btn btn-green">@Html.ActionLink("Back to List", "Index")</button>
+    </p>
+}
+

@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="~/Assets/BlogTemplate/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Assets/BlogTemplate/vendor/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Assets/BlogTemplate/css/fontastic.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link href="~/Assets/BlogTemplate/css/style.green.css" rel="stylesheet" />
+    <link href="~/Assets/BlogTemplate/css/custom.css" rel="stylesheet" />
+    <link href="~/Assets/BlogTemplate/vendor/&#64;fancyapps/fancybox/jquery.fancybox.min.css" rel="stylesheet" />
+    <!-- Tweaks for older IEs-->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <link rel="shortcut icon" href="favicon.png">
+
+    <link href="~/Scripts/ckeditor/contents.css" rel="stylesheet" />
+
+    <!--pagedList Style-->
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    <header class="header">
+        <!-- Main Navbar-->
+        <nav class="navbar navbar-expand-lg">
+            <div class="search-area">
+                <div class="search-area-inner d-flex align-items-center justify-content-center">
+                    <div class="close-btn"><i class="icon-close"></i></div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-8">
+                                @using (Html.BeginForm("Index", "BlogPosts", FormMethod.Get))
+                                {
+                                    <div class="form-group">
+                                        <input type="search" name="searchStr" id="search" placeholder="What are you looking for?">
+                                        <button type="submit"><i class="icon-search-1"></i></button>
+                                    </div>
+                                }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <!-- Navbar Brand -->
+                <div class="navbar-header d-flex align-items-center justify-content-between">
+                    <!-- Navbar Brand --><h3>@Html.ActionLink("MVC Blog Site", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</h3>
+                    <!-- Toggle Button-->
+                    <button type="button" data-toggle="collapse" data-target="#navbarcollapse" aria-controls="navbarcollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span></span><span></span><span></span></button>
+                </div>
+                <!-- Navbar Menu -->
+                <div id="navbarcollapse" class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            @Html.ActionLink("Home", "Index", "BlogPosts", new { area = "" }, new { @class = "nav-link " })
+                        </li>
+                        @*<li class="nav-item">
+                            @Html.ActionLink("API", "Index", "Help", new { area = "HelpPage" }, new { @class = "nav-link " })
+                        </li>*@
+                    </ul>
+                    <div class="navbar-text"><a href="#" class="search-btn"><i class="icon-search-1"></i></a></div>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    <!-- Javascript files-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"> </script>
+    <script src="~/Assets/BlogTemplate/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Assets/BlogTemplate/vendor/jquery.cookie/jquery.cookie.js"></script>
+    <script src="~/Assets/BlogTemplate/vendor/fancyapps/fancybox/jquery.fancybox.min.js"></script>
+    <script src="~/Assets/BlogTemplate/js/front.js"></script>
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
