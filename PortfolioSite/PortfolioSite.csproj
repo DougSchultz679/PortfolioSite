@@ -527,7 +527,7 @@
     <Content Include="Assets\contactform\contactform.js" />
     <Content Include="Assets\contactform\readme.txt" />
     <Content Include="Assets\css\bootstrap.min.css" />
-    <Content Include="Assets\css\font-awesome.min.css" />
+    <Content Include="Assets\css\fontawesome.min.css" />
     <Content Include="Assets\css\imagehover.min.css" />
     <Content Include="Assets\css\style.css" />
     <Content Include="Assets\fonts\fontawesome-webfont.svg" />
@@ -936,6 +936,7 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="private.config" />
     <None Include="Properties\PublishProfiles\DouglasSchultzPortfolio - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1-vsdoc.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -1001,7 +1002,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <None Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Assets\js\bootstrap.min.js" />
     <Content Include="Assets\js\custom.js" />
     <Content Include="Assets\js\jquery.easing.min.js" />
