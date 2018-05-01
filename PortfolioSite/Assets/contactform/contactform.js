@@ -46,7 +46,10 @@ jQuery(document).ready(function ($) {
                         if (!exp.test(i.val())) { ferror = ierror = true; }
                         break;
                 }
-                i.next('.validation').html((ierror ? (i.attr('data-msg') !== undefined ? i.attr('data-msg') : 'wrong Input') : '')).show('blind');
+                i.next('.validation').html(
+                    (ierror ? (i.attr('data-msg') !==
+                    undefined ? i.attr('data-msg') : 'wrong Input') : ''))
+                    .show('blind');
             }
         });
         f.children('textarea').each(function () { // run all inputs
@@ -73,9 +76,30 @@ jQuery(document).ready(function ($) {
                         if (i.val().length < parseInt(exp)) { ferror = ierror = true; }
                         break;
                 }
-                i.next('.validation').html((ierror ? (i.attr('data-msg') != undefined ? i.attr('data-msg') : 'wrong Input') : '')).show('blind');
+                i.next('.validation').html((ierror ? (i.attr('data-msg') !== undefined ? i.attr('data-msg') : 'wrong Input') : '')).show('blind');
+            }
+        });
+        if (ferror) return false;
+        else var str = $(this).serialize();
+        $.ajax({
+            type: "POST",
+            url: "Home/ContactSend",
+            data: str,
+            success: function (msg) {
+                // alert(msg);
+                if (msg === 'OK') {
+                    $("#sendmessage").addClass("show");
+                    $("#errormessage").removeClass("show");
+                }
+                else {
+                    $("#sendmessage").removeClass("show");
+                    $("#errormessage").addClass("show");
+                    $('#errormessage').html(msg);
+                }
+
             }
         });
         return false;
     });
+
 });
